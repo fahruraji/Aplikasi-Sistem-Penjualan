@@ -6,4 +6,4 @@
   2. FastReport4 (https://www.fast-report.com/en/download/fast-report-vcl/) untuk membuat laporan; dan
   3. AlphaSkins (https://www.alphaskins.com/sfiles/stable/acnt_d7.zip) untuk mempercantik tampilan.
 
-Username yang bisa digunakan untuk masuk ke aplikasi adalah admin, kasir1, kasir2 dan bossq dengan password 12345
+Username yang bisa digunakan untuk masuk ke dalam aplikasi adalah admin, kasir1, kasir2 dan bossq dengan password 12345
