@@ -17,10 +17,13 @@ Form Login
 
 ![login](https://user-images.githubusercontent.com/58252615/122660505-cd15ab80-d1b4-11eb-8333-9a7f3ed89714.png)
 
-
 Menu Utama
 
 ![menu-utama](https://user-images.githubusercontent.com/58252615/122660471-642e3380-d1b4-11eb-87bb-3efe3af04455.png)
+
+Ganti Password
+
+![ganti-password](https://user-images.githubusercontent.com/58252615/122661108-870f1680-d1b9-11eb-97f9-dfd15e248c4f.png)
 
 Form Data Produk
 
