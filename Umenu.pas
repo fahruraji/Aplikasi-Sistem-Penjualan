@@ -110,6 +110,8 @@ procedure TFmenu.FormShow(Sender: TObject);
 begin
     if dm.ROLE='kasir' then
     begin
+       Transaksi.Visible:=True;
+       btnSale.Enabled:=True;
        MasterData.Visible:=False;
        Laporan1.Visible:=False;
        btnKaryawan.Enabled:=False;
