@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
-  Buttons, sSkinManager;
+  Buttons, sSkinManager, acPNG, ExtCtrls;
 
 type
   TFlogin = class(TForm)
@@ -17,6 +17,7 @@ type
     BitBtn1: TBitBtn;
     Zlogin: TZQuery;
     sSkinManager1: TsSkinManager;
+    Image1: TImage;
     procedure BitBtn1Click(Sender: TObject);
     procedure setAwal;
     procedure FormShow(Sender: TObject);

@@ -51,6 +51,7 @@ begin
       end else
       begin
         dm.IDKARYAWAN:=dm.qryLogin['id'];
+        dm.UNAME:=dm.qryLogin['username'];
         dm.NAMAKARYAWAN:=dm.qryLogin['nama'];
         dm.ROLE:=dm.qryLogin['role'];
         dm.qryLogin.Close;

@@ -97,7 +97,6 @@ object Flogin: TFlogin
     OnClick = BitBtn1Click
   end
   object Zlogin: TZQuery
-    Connection = Fproduk.ZConnection1
     SQL.Strings = (
       'SELECT * FROM karyawan')
     Params = <>
@@ -107,8 +106,8 @@ object Flogin: TFlogin
   object sSkinManager1: TsSkinManager
     InternalSkins = <>
     SkinDirectory = 'c:\Skins'
-    SkinName = 'AlterMetro 2016'
-    SkinInfo = '10'
+    SkinName = 'Lucky'
+    SkinInfo = '10.25'
     ThirdParty.ThirdEdits = 
       'TEdit'#13#10'TMemo'#13#10'TMaskEdit'#13#10'TLabeledEdit'#13#10'THotKey'#13#10'TListBox'#13#10'TCheck' +
       'ListBox'#13#10'TRichEdit'#13#10'TDateTimePicker'
