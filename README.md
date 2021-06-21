@@ -39,7 +39,7 @@ Tangkapan layar
 
 *Form Transaksi Penjualan*
 
-![transaksi-penjualan](https://user-images.githubusercontent.com/58252615/122719653-12170c00-d2a1-11eb-8174-0ab92452d040.PNG)
+![transaksi-penjualan](https://user-images.githubusercontent.com/58252615/122731704-23b2e080-d2ae-11eb-8f86-b23ed120f91e.png)
 
 
 *Cetak Struk Penjualan*
