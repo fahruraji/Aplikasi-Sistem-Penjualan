@@ -17,6 +17,7 @@ type
     BitBtn1: TBitBtn;
     Zlogin: TZQuery;
     sSkinManager1: TsSkinManager;
+    Image1: TImage;
     procedure BitBtn1Click(Sender: TObject);
     procedure setAwal;
     procedure FormShow(Sender: TObject);
