@@ -1,6 +1,7 @@
 object dm: Tdm
   OldCreateOrder = False
-  Left = 166
+  Left = 348
+  Top = 137
   Height = 440
   Width = 562
   object Koneksi: TZConnection
@@ -12,7 +13,9 @@ object dm: Tdm
     Database = 'db_penjualan_praktek'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 'C:\Users\Se7en\Documents\Aplikasi-Sistem-Penjualan\libmysql.dll'
+    LibraryLocation = 
+      'D:\Belajar\SEMESTER 4\PEMROGRAMAN VISUAL 2\Praktek Delphi\libmys' +
+      'ql.dll'
     Left = 240
     Top = 24
   end

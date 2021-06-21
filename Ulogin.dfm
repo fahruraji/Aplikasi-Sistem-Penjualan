@@ -5,22 +5,21 @@ object Flogin: TFlogin
   Height = 331
   Caption = 'Form Login'
   Color = clBtnFace
-  TransparentColor = True
-  Font.Charset = DEFAULT_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -13
+  Font.Name = 'Arial'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 16
   object Label1: TLabel
     Left = 85
     Top = 32
-    Width = 296
-    Height = 24
+    Width = 320
+    Height = 25
     Caption = 'APLIKASI SISTEM PENJUALAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -32833,6 +32832,7 @@ object Flogin: TFlogin
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
     Proportional = True
+    Transparent = True
   end
   object Edit1: TEdit
     Left = 229
@@ -32871,7 +32871,7 @@ object Flogin: TFlogin
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
     OnClick = BitBtn1Click

@@ -1,8 +1,7 @@
 object dm: Tdm
   OldCreateOrder = False
-  Left = 341
-  Top = 122
-  Height = 448
+  Left = 166
+  Height = 440
   Width = 562
   object Koneksi: TZConnection
     ControlsCodePage = cGET_ACP

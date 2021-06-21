@@ -440,6 +440,7 @@ object Fpenjualan: TFpenjualan
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 15
   end
   object sAlphaImageList1: TsAlphaImageList
