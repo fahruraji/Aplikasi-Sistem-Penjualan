@@ -1,10 +1,11 @@
 object Flogin: TFlogin
-  Left = 518
-  Top = 248
+  Left = 224
+  Top = 149
   Width = 535
   Height = 331
   Caption = 'Form Login'
   Color = clBtnFace
+  TransparentColor = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,14 +17,14 @@ object Flogin: TFlogin
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 165
+    Left = 85
     Top = 32
-    Width = 177
-    Height = 32
-    Caption = 'MENU LOGIN'
+    Width = 296
+    Height = 24
+    Caption = 'APLIKASI SISTEM PENJUALAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -27
+    Font.Height = -21
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
@@ -60,7 +61,7 @@ object Flogin: TFlogin
     Width = 204
     Height = 28
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clNavy
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -73,7 +74,7 @@ object Flogin: TFlogin
     Width = 204
     Height = 28
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clNavy
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []

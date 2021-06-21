@@ -1,10 +1,11 @@
 object Flogin: TFlogin
-  Left = 518
-  Top = 248
+  Left = 224
+  Top = 149
   Width = 535
   Height = 331
   Caption = 'Form Login'
   Color = clBtnFace
+  TransparentColor = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -18,8 +19,8 @@ object Flogin: TFlogin
   object Label1: TLabel
     Left = 85
     Top = 32
-    Width = 320
-    Height = 25
+    Width = 296
+    Height = 24
     Caption = 'APLIKASI SISTEM PENJUALAN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -55,10 +56,10 @@ object Flogin: TFlogin
     ParentFont = False
   end
   object Image1: TImage
-    Left = 288
-    Top = 48
-    Width = 209
-    Height = 241
+    Left = 320
+    Top = 64
+    Width = 169
+    Height = 193
     Picture.Data = {
       0B54504E474772617068696336001000424D3600100000000000360000002800
       0000000200000002000001002000000000000000100000000000000000000000
@@ -32839,7 +32840,7 @@ object Flogin: TFlogin
     Width = 204
     Height = 28
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clNavy
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []
@@ -32852,7 +32853,7 @@ object Flogin: TFlogin
     Width = 204
     Height = 28
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clNavy
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []

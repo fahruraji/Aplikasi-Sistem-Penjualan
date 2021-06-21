@@ -1,8 +1,7 @@
 object dm: Tdm
   OldCreateOrder = False
-  Left = 258
-  Top = 352
-  Height = 448
+  Left = 166
+  Height = 440
   Width = 562
   object Koneksi: TZConnection
     ControlsCodePage = cGET_ACP
@@ -13,9 +12,7 @@ object dm: Tdm
     Database = 'db_penjualan_praktek'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 
-      'D:\Belajar\SEMESTER 4\PEMROGRAMAN VISUAL 2\Praktek Delphi\libmys' +
-      'ql.dll'
+    LibraryLocation = 'C:\Users\Se7en\Documents\Aplikasi-Sistem-Penjualan\libmysql.dll'
     Left = 240
     Top = 24
   end
@@ -327,6 +324,7 @@ object dm: Tdm
   end
   object qryPenjualan: TZQuery
     Connection = Koneksi
+    Active = True
     SQL.Strings = (
       'SELECT * FROM penjualan')
     Params = <>
@@ -335,6 +333,7 @@ object dm: Tdm
   end
   object qryLogin: TZReadOnlyQuery
     Connection = Koneksi
+    Active = True
     SQL.Strings = (
       'SELECT * FROM karyawan')
     Params = <>

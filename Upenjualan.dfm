@@ -1,8 +1,8 @@
 object Fpenjualan: TFpenjualan
-  Left = 537
-  Top = 216
-  Width = 827
-  Height = 575
+  Left = 261
+  Top = 66
+  Width = 819
+  Height = 548
   Caption = 'Form Penjualan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,8 +16,8 @@ object Fpenjualan: TFpenjualan
   PixelsPerInch = 96
   TextHeight = 13
   object Label7: TLabel
-    Left = 24
-    Top = 168
+    Left = 168
+    Top = 152
     Width = 84
     Height = 16
     Caption = 'Nama Barang'
@@ -29,8 +29,8 @@ object Fpenjualan: TFpenjualan
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 352
-    Top = 168
+    Left = 376
+    Top = 152
     Width = 83
     Height = 16
     Caption = 'Harga Satuan'
@@ -42,8 +42,8 @@ object Fpenjualan: TFpenjualan
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 632
-    Top = 168
+    Left = 504
+    Top = 152
     Width = 51
     Height = 16
     Caption = 'Jumlah *'
@@ -99,32 +99,6 @@ object Fpenjualan: TFpenjualan
     Font.Style = []
     ParentFont = False
   end
-  object Label6: TLabel
-    Left = 400
-    Top = 61
-    Width = 43
-    Height = 37
-    Caption = 'Rp'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -33
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label5: TLabel
-    Left = 344
-    Top = 33
-    Width = 70
-    Height = 16
-    Caption = 'Total Bayar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    ParentFont = False
-  end
   object Label2: TLabel
     Left = 32
     Top = 97
@@ -139,30 +113,33 @@ object Fpenjualan: TFpenjualan
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 24
-    Top = 464
-    Width = 217
+    Left = 592
+    Top = 168
+    Width = 178
     Height = 13
-    Caption = '*Tekan ENTER setelah mengisi kolom Jumlah'
+    Caption = ' setelah mengisi jumlah tekan ENTER'
   end
   object Label11: TLabel
-    Left = 24
-    Top = 480
-    Width = 171
+    Left = 592
+    Top = 184
+    Width = 161
     Height = 13
-    Caption = ' untuk lanjut menambah item barang'
+    Caption = ' untuk menambahkan item barang'
   end
-  object Ltotal: TLabel
-    Left = 456
-    Top = 61
-    Width = 20
-    Height = 37
+  object total: TLabel
+    Left = 570
+    Top = 40
+    Width = 31
+    Height = 67
+    Alignment = taRightJustify
     Caption = '0'
-    Font.Charset = DEFAULT_CHARSET
+    Color = clBtnFace
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -33
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -47
+    Font.Name = 'Arial Black'
     Font.Style = [fsBold]
+    ParentColor = False
     ParentFont = False
   end
   object Lfaktur: TLabel
@@ -178,9 +155,68 @@ object Fpenjualan: TFpenjualan
     Font.Style = []
     ParentFont = False
   end
+  object Label4: TLabel
+    Left = 24
+    Top = 152
+    Width = 73
+    Height = 16
+    Caption = 'No Barcode'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 592
+    Top = 152
+    Width = 195
+    Height = 13
+    Caption = '*Input no barcode atau pilih nama barang'
+  end
+  object Label12: TLabel
+    Left = 592
+    Top = 416
+    Width = 37
+    Height = 16
+    Caption = 'Total'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 592
+    Top = 448
+    Width = 42
+    Height = 16
+    Caption = 'Bayar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 592
+    Top = 480
+    Width = 57
+    Height = 16
+    Caption = 'Kembali'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object cbBarang: TComboBox
-    Left = 120
-    Top = 164
+    Left = 168
+    Top = 172
     Width = 201
     Height = 24
     Font.Charset = DEFAULT_CHARSET
@@ -194,9 +230,9 @@ object Fpenjualan: TFpenjualan
     OnChange = cbBarangChange
   end
   object eHarga: TEdit
-    Left = 456
-    Top = 164
-    Width = 137
+    Left = 376
+    Top = 172
+    Width = 121
     Height = 24
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -208,8 +244,8 @@ object Fpenjualan: TFpenjualan
     TabOrder = 1
   end
   object eJumlah: TEdit
-    Left = 720
-    Top = 164
+    Left = 504
+    Top = 172
     Width = 73
     Height = 24
     Font.Charset = DEFAULT_CHARSET
@@ -225,7 +261,7 @@ object Fpenjualan: TFpenjualan
     Left = 24
     Top = 208
     Width = 769
-    Height = 233
+    Height = 193
     FixedColor = clGray
     TabOrder = 3
   end
@@ -245,8 +281,8 @@ object Fpenjualan: TFpenjualan
     TabOrder = 4
   end
   object btnSimpan: TsBitBtn
-    Left = 520
-    Top = 464
+    Left = 80
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Simpan transaksi'
@@ -260,8 +296,8 @@ object Fpenjualan: TFpenjualan
     SkinData.CustomColor = True
   end
   object btnHapus: TsBitBtn
-    Left = 576
-    Top = 464
+    Left = 136
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Hapus item barang'
@@ -274,8 +310,8 @@ object Fpenjualan: TFpenjualan
     SkinData.CustomColor = True
   end
   object btnBaru: TsBitBtn
-    Left = 464
-    Top = 464
+    Left = 24
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Transaksi baru'
@@ -289,8 +325,8 @@ object Fpenjualan: TFpenjualan
     SkinData.CustomColor = True
   end
   object btnReset: TsBitBtn
-    Left = 632
-    Top = 464
+    Left = 192
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Reset'
@@ -322,8 +358,8 @@ object Fpenjualan: TFpenjualan
     SkinData.CustomFont = True
   end
   object btnPrev: TsBitBtn
-    Left = 688
-    Top = 464
+    Left = 248
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Tampilkan data sebelumnya'
@@ -337,8 +373,8 @@ object Fpenjualan: TFpenjualan
     SkinData.CustomColor = True
   end
   object btnNext: TsBitBtn
-    Left = 744
-    Top = 464
+    Left = 304
+    Top = 440
     Width = 49
     Height = 49
     Hint = 'Tampilkan data selanjutnya'
@@ -350,6 +386,61 @@ object Fpenjualan: TFpenjualan
     ImageIndex = 6
     Images = sAlphaImageList1
     SkinData.CustomColor = True
+  end
+  object eBarcode: TEdit
+    Left = 24
+    Top = 172
+    Width = 137
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+    OnKeyPress = eBarcodeKeyPress
+  end
+  object eTotal: TEdit
+    Left = 672
+    Top = 412
+    Width = 121
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 13
+  end
+  object eBayar: TEdit
+    Left = 672
+    Top = 444
+    Width = 121
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 14
+    OnKeyPress = eBayarKeyPress
+  end
+  object eKembali: TEdit
+    Left = 672
+    Top = 476
+    Width = 121
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 15
   end
   object sAlphaImageList1: TsAlphaImageList
     Height = 32
@@ -2568,8 +2659,8 @@ object Fpenjualan: TFpenjualan
           0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E
           0E0E0E0E0E0E1AFF3FC6CA2038C44AA6E60000000049454E44AE426082}
       end>
-    Left = 272
-    Top = 464
+    Left = 312
+    Top = 56
     Bitmap = {}
   end
 end

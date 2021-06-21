@@ -1,8 +1,8 @@
 object FLPenjualan: TFLPenjualan
-  Left = 764
-  Top = 234
+  Left = 467
+  Top = 83
   Width = 572
-  Height = 506
+  Height = 440
   Caption = 'Data Penjualan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

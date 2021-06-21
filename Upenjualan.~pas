@@ -21,13 +21,11 @@ type
     Label3: TLabel;
     Lkasir: TLabel;
     Label1: TLabel;
-    Label6: TLabel;
-    Label5: TLabel;
     Label2: TLabel;
     eTgl: TDateTimePicker;
     Label10: TLabel;
     Label11: TLabel;
-    Ltotal: TLabel;
+    total: TLabel;
     Lfaktur: TLabel;
     btnSimpan: TsBitBtn;
     sAlphaImageList1: TsAlphaImageList;
@@ -37,6 +35,15 @@ type
     btnCetak: TsBitBtn;
     btnPrev: TsBitBtn;
     btnNext: TsBitBtn;
+    Label4: TLabel;
+    eBarcode: TEdit;
+    Label5: TLabel;
+    Label12: TLabel;
+    eTotal: TEdit;
+    Label13: TLabel;
+    eBayar: TEdit;
+    Label14: TLabel;
+    eKembali: TEdit;
     procedure FormShow(Sender: TObject);
     procedure cbBarangChange(Sender: TObject);
     procedure eJumlahKeyPress(Sender: TObject; var Key: Char);
@@ -52,6 +59,8 @@ type
     procedure btnCetakClick(Sender: TObject);
     procedure btnPrevClick(Sender: TObject);
     procedure btnNextClick(Sender: TObject);
+    procedure eBayarKeyPress(Sender: TObject; var Key: Char);
+    procedure eBarcodeKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -74,7 +83,8 @@ begin
     setNomor;
     Lkasir.Caption:=dm.NAMAKARYAWAN;
     eTgl.Date:=Date;
-    Ltotal.Caption:='0';
+    total.Caption:='Rp 0';
+    eTotal.Text:='0';
     cbBarang.Text:='';
     eHarga.Clear;
     eJumlah.Clear;
@@ -87,7 +97,14 @@ begin
     btnSimpan.Enabled:=False;
     btnHapus.Enabled:=False;
     btnReset.Enabled:=False;
+    btnPrev.Enabled:=True;
     btnNext.Enabled:=False;
+    Label12.Visible:=True;
+    Label13.Visible:=True;
+    Label14.Visible:=True;
+    eTotal.Visible:=True;
+    eBayar.Visible:=True;
+    eKembali.Visible:=True;
 end;
 
 procedure TFpenjualan.FormShow(Sender: TObject);
@@ -132,10 +149,10 @@ end;
 procedure TFpenjualan.cbBarangChange(Sender: TObject);
 begin
   if dm.qryProduk.Locate ('nama',cbBarang.Text,[])=True then
+    eBarcode.Text:=dm.qryProduk.FieldByName('barcode').AsString;
     eHarga.Text:=dm.qryProduk.FieldByName('harga_jual').AsString;
     eJumlah.SetFocus;
     idBarang:=dm.qryProduk.FieldByName('id').AsString;
-    barcode:=dm.qryProduk.FieldByName('barcode').AsString;
 end;
 
 procedure TFpenjualan.CreateGrid;
@@ -171,7 +188,7 @@ begin
     begin
       if (eJumlah.Text <> '') and (eJumlah.Text <>'0') then
       begin
-        Sg.Cells[0,sg.Row]:=barcode;
+        Sg.Cells[0,sg.Row]:=eBarcode.Text;
         Sg.Cells[1,sg.Row]:=cbBarang.Text;
         Sg.Cells[2,sg.Row]:=eHarga.Text;
         Sg.Cells[3,sg.Row]:=eJumlah.Text;
@@ -179,14 +196,16 @@ begin
         Sg.Cells[5,sg.Row]:=idBarang;
         sg.RowCount := sg.RowCount +1;
         sg.Row := sg.RowCount -1;
-        Ltotal.Caption:=inttostr(strtoint(Ltotal.Caption)+(strtoint(eJumlah.Text)*strtoint(eHarga.Text)));
+        eTotal.Text:=inttostr(strtoint(eTotal.Text)+(strtoint(eJumlah.Text)*strtoint(eHarga.Text)));
+        total.Caption:=formatfloat('Rp. ##,###,###',StrToFloat(eTotal.Text));
+        eBarcode.Clear;
         cbBarang.Text :='';
         cbBarang.SetFocus;
         eHarga.Clear;
         eJumlah.Clear;
-        btnSimpan.Enabled:=True;
         btnHapus.Enabled:=True;
         btnReset.Enabled:=True;
+        btnPrev.Enabled:=False;
       end else
         Showmessage('Jumlah Belum dimasukan');
     end;end;
@@ -213,7 +232,7 @@ begin
     begin
       //simpan data penjualan
       SQL.Clear;
-      SQL.Add('INSERT INTO penjualan VALUES (null,"'+Lfaktur.Caption+'","'+tgl+'","'+dm.IDKARYAWAN+'","'+Ltotal.Caption+'")');
+      SQL.Add('INSERT INTO penjualan VALUES (null,"'+Lfaktur.Caption+'","'+tgl+'","'+dm.IDKARYAWAN+'","'+eTotal.Text+'")');
       ExecSQL;
     end;
     for i := 1 to sg.RowCount -1 do
@@ -248,7 +267,8 @@ begin
   if messageDlg('Yakin ingin menghapus item?',mtConfirmation,[Mbyes,MBno],0)=Mryes then
   begin
     //hitung ulang total belanja
-    Ltotal.Caption:=inttostr(strtoint(Ltotal.Caption)-strtoint(sg.Cells [4,sg.Row]));
+    eTotal.Text:=inttostr(strtoint(eTotal.Text)-strtoint(sg.Cells [4,sg.Row]));
+    total.Caption:=formatfloat('Rp. ##,###,###',StrToFloat(eTotal.Text));
     //hapus item barang yang dipilih
     for i := sg.Row to sg.RowCount - 2 do
     begin
@@ -311,7 +331,8 @@ begin
       if dm.qryKaryawan.Locate ('id',dm.qryPenjualan.Fields[3].AsString,[])=True then
         Lkasir.Caption:=dm.qryKaryawan.FieldByName('nama').AsString;
       Lfaktur.Caption:=dm.qryPenjualan.Fields[1].AsString;
-      Ltotal.Caption:=dm.qryPenjualan.Fields[4].AsString;
+      eTotal.Text:=dm.qryPenjualan.Fields[4].AsString;
+      total.Caption:=formatfloat('Rp. ##,###,###',StrToFloat(eTotal.Text));
 
       with dm.qryDetil do
       begin
@@ -338,7 +359,48 @@ begin
       eJumlah.Enabled:=False;
       btnCetak.Enabled:=True;
       btnReset.Enabled:=True;
+      Label12.Visible:=False;
+      Label13.Visible:=False;
+      Label14.Visible:=False;
+      eTotal.Visible:=False;
+      eBayar.Visible:=False;
+      eKembali.Visible:=False;
     end;
+end;
+
+procedure TFpenjualan.eBayarKeyPress(Sender: TObject; var Key: Char);
+begin
+  if not (key in['0'..'9',#13,#8,#10]) then key :=#0;
+  if key = #13 then
+  begin
+    if (strtoint(eBayar.Text) >= strtoint(eTotal.Text)) then
+    begin
+      eKembali.Text:=inttostr(strtoint(eBayar.Text)-strtoint(eTotal.Text));
+      btnSimpan.Enabled:=True;
+    end else
+    begin
+      ShowMessage('Uang pembayaran masih kurang');
+    end;
+  end;
+end;
+
+procedure TFpenjualan.eBarcodeKeyPress(Sender: TObject; var Key: Char);
+begin
+   if not (key in['0'..'9',#13,#8,#10]) then key :=#0;
+   if key = #13 then
+   begin
+    if dm.qryProduk.Locate ('barcode',eBarcode.Text,[])=True then
+    begin
+      cbBarang.Text:=dm.qryProduk.FieldByName('nama').AsString;
+      eHarga.Text:=dm.qryProduk.FieldByName('harga_jual').AsString;
+      eJumlah.SetFocus;
+    end else
+    begin
+      ShowMessage('Barcode tidak ditemukan');
+      eBarcode.Clear;
+      eBarcode.SetFocus;
+   end;
+  end;
 end;
 
 end.
